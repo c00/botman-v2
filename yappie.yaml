@@ -1,0 +1,7 @@
+version: 1
+saveHistory: false
+llmProvider: yappie
+tools:
+  - name: add_numbers
+    description: Adds two numbers together.
+    toolType: add
