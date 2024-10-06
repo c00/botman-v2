@@ -6,7 +6,7 @@ import (
 
 	"github.com/c00/botman-v2/chatbot"
 	chattertest "github.com/c00/botman-v2/internal/chattertest"
-	"github.com/c00/botman-v2/logger"
+	"github.com/c00/botman-v2/internal/logger"
 	"github.com/stretchr/testify/assert"
 )
 

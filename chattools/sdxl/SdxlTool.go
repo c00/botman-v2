@@ -13,8 +13,8 @@ import (
 	"time"
 
 	"github.com/c00/botman-v2/chattools"
+	"github.com/c00/botman-v2/internal/logger"
 	"github.com/c00/botman-v2/internal/storageprovider"
-	"github.com/c00/botman-v2/logger"
 )
 
 var log = logger.New("SdxlTool")

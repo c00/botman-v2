@@ -96,41 +96,17 @@ I created it mainly for myself but thought it might be useful for others. My mot
 
 I'm adding features as I feel they're useful. I'm open to suggestions and outside contributions. The aim is to be simple, non-intrusive and transparent about data.
 
-- [x] LLM agnostic - Make botman able to work with any LLM by abstracting the interface to the LLM.
-- [x] Add Fireworks AI integration
-- [x] Add Claude integration
-- [x] Add generic Function calling - Make it so it can function regardless of underlying model (Add switch-model as a function)
-- [x] Add Image Generation for SDXL through FireworksAi
-- [x] Replace flags with cobra
-- [ ] Add Image Generation for OpenAi
 - [ ] Add a terminal emulator (tcell, bubbletea, readline, ???)
 - [ ] Auto cleanup old conversations
 - [ ] Search in old conversation
-- [x] Continue conversations
-
-# Refactor Todo list
-
-- [x] Fix the file structure with an internal folder and a cmd folder for better consumption
-- [x] Create a proper interface for a chat bot
-- [x] Test said interface, also create a fake chatbot, so it becomes very easy to test new ones.
-- [x] Implement openAi
-- [x] Implement fireworksLlms
-- [x] Test that history is saved
-- [x] Consider a proper implementation for tool use. (And consider shit like attachments like generated images.)
 - [ ] Consider input types like images and documents.
 - [ ] Update [slackbot](https://github.com/c00/botman-slack) to use this one instead
-- [ ] reintroduce the `-l` flag
-- [ ] reintroduce the config wizad
-
-## Tool Use
-
-- [x] ChatMessage should have a []toolCall property
-- [x] Mainloop executes the tool calls
-- [x] Configuration should just have a bunch of tools enabled by default
-- [ ] Implement tool calling in
-  - [x] Claude (add it to request + deal with result)
-  - [ ] OpenAi
-  - [ ] Fireworks
-- [x] Implement SDXL Tool
-- [x] Add s3 as storage option
-- [ ] Implement Dall-e Tool
+- [x] reintroduce the config wizard
+  - [ ] add config wizard for tools
+- [ ] Separate tests between integration and normals.
+- [ ] Tool Use
+  - [ ] Implement tool calling in all models
+    - [x] Claude (add it to request + deal with result)
+    - [ ] OpenAi
+    - [ ] Fireworks
+  - [ ] Implement Dall-e Tool

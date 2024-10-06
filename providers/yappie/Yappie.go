@@ -7,7 +7,7 @@ import (
 	"github.com/c00/botman-v2/chatbot"
 	"github.com/c00/botman-v2/chattools"
 	"github.com/c00/botman-v2/internal/channeltools"
-	"github.com/c00/botman-v2/logger"
+	"github.com/c00/botman-v2/internal/logger"
 )
 
 const defaultResponse = "Belloo! poopayee bappleees tank yuuu! Chasy potatoooo tulaliloo belloo! Belloo! baboiii hana dul sae jiji daa po kass. Hahaha hahaha uuuhhh chasy jeje. Butt baboiii poulet tikka masala pepete jeje hana dul sae. Bee do bee do bee do daa wiiiii tank yuuu! Potatoooo gelatooo po kass poopayee. Daa jiji tank yuuu! Uuuhhh bappleees ti aamoo! Gelatooo gelatooo. Tatata bala tu hahaha me want bananaaa! Bananaaaa wiiiii me want bananaaa! Wiiiii tatata bala tu."

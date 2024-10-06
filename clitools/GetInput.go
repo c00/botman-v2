@@ -8,6 +8,17 @@ import (
 	"strings"
 )
 
+func SetInput(label string, value *string, readFrom io.Reader, writeTo io.Writer) {
+	if *value != "" {
+		label = fmt.Sprintf("%v [%v]", label, *value)
+	}
+	got := GetInput(label, readFrom, writeTo)
+	if got == "" {
+		return
+	}
+	*value = got
+}
+
 func GetInput(label string, readFrom io.Reader, writeTo io.Writer) string {
 	//Wait for an enter
 	reader := bufio.NewReader(readFrom)

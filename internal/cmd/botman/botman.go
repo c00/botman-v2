@@ -3,10 +3,9 @@ package main
 import (
 	"os"
 
-	"github.com/c00/botman-v2/logger"
+	"github.com/c00/botman-v2/internal/logger"
 )
 
-const version = "2.0.3"
 const binary = "botman"
 
 func main() {

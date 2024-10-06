@@ -1,6 +1,6 @@
 package history
 
-import "github.com/c00/botman-v2/logger"
+import "github.com/c00/botman-v2/internal/logger"
 
 var log = logger.New("historyKeeper")
 
