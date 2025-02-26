@@ -25,6 +25,8 @@ func New(cfg Config) (*Claude, error) {
 		return nil, errors.New("missing claude api key")
 	}
 
+	log.Debug("Using Claude model: %v", cfg.Model)
+
 	return &Claude{
 		cfg: cfg,
 	}, nil
@@ -66,6 +68,8 @@ func (c *Claude) GetStreamingResponse(message chatbot.ChatMessage, streamChan ch
 		MaxTokens: c.cfg.MaxTokens,
 	}
 
+	log.Debug("Systemprompt: %v", c.cfg.SystemPrompt)
+
 	//Add tools
 	if len(c.tools) > 0 {
 		body.Tools = []claudeToolDef{}
@@ -83,8 +87,8 @@ func (c *Claude) GetStreamingResponse(message chatbot.ChatMessage, streamChan ch
 		return chatbot.ChatMessage{}, fmt.Errorf("cannot marshal claude post body: %w", err)
 	}
 
-	// indented, _ := json.MarshalIndent(body, "", "  ")
-	// log.Debug("\n\nBODY: %v\n\n", string(indented))
+	indented, _ := json.MarshalIndent(body, "", "  ")
+	log.Debug("\n\nBODY: %v\n\n", string(indented))
 
 	req, err := http.NewRequest("POST", apiUrl, bytes.NewReader(jsonBody))
 	req.Header.Set("Content-Type", "application/json")

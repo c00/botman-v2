@@ -3,6 +3,7 @@ package mainloop
 import (
 	"fmt"
 	"io"
+	"slices"
 	"sync"
 
 	"github.com/c00/botman-v2/chatbot"
@@ -65,6 +66,9 @@ func (l *MainLoop) getToolDef(name string) (chattools.ToolDefinition, error) {
 }
 
 func (l *MainLoop) SetTools(tools []chattools.ToolDefinition) {
+	if !slices.Contains(l.Chatter.SupportedFeatures(), "tools") {
+		return
+	}
 	l.tools = tools
 	l.Chatter.SetTools(tools)
 }
