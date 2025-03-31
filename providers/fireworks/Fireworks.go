@@ -16,6 +16,8 @@ import (
 	"github.com/c00/botman-v2/internal/logger"
 )
 
+var _ chatbot.Chatter = (*Fireworks)(nil)
+
 const apiUrl = "https://api.fireworks.ai/inference/v1/chat/completions"
 
 var log = logger.New("Fireworks")

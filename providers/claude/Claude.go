@@ -16,6 +16,8 @@ import (
 	"github.com/c00/botman-v2/jsonschema"
 )
 
+var _ chatbot.Chatter = (*Claude)(nil)
+
 const apiUrl = "https://api.anthropic.com/v1/messages"
 
 var log = logger.New("Claude")

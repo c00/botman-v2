@@ -9,6 +9,7 @@ import (
 	"github.com/c00/botman-v2/internal/config"
 	"github.com/c00/botman-v2/providers/claude"
 	"github.com/c00/botman-v2/providers/fireworks"
+	"github.com/c00/botman-v2/providers/gemini"
 	"github.com/c00/botman-v2/providers/openai"
 	"github.com/c00/botman-v2/providers/yappie"
 )
@@ -27,6 +28,10 @@ func getChatter(conf config.BotmanConfig) (chatbot.Chatter, error) {
 	case config.LlmProviderOpenAi:
 		conf.OpenAi.SystemPrompt = strings.TrimSpace(fmt.Sprintf("%v %v", conf.SystemPrompt, conf.OpenAi.SystemPrompt))
 		return openai.New(conf.OpenAi)
+	case config.LlmProviderGemini:
+		conf.Gemini.SystemPrompt = strings.TrimSpace(fmt.Sprintf("%v %v", conf.SystemPrompt, conf.OpenAi.SystemPrompt))
+		return gemini.New(conf.Gemini)
+
 	case config.LlmProviderYappie:
 		return &yappie.Yappie{SystemPrompt: conf.SystemPrompt}, nil
 	}

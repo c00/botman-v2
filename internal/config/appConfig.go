@@ -5,6 +5,7 @@ import (
 	"github.com/c00/botman-v2/internal/storageprovider"
 	"github.com/c00/botman-v2/providers/claude"
 	"github.com/c00/botman-v2/providers/fireworks"
+	"github.com/c00/botman-v2/providers/gemini"
 	"github.com/c00/botman-v2/providers/openai"
 )
 
@@ -12,6 +13,7 @@ const LlmProviderOpenAi = "openai"
 const LlmProviderFireworksAi = "fireworksai"
 const LlmProviderClaude = "claude"
 const LlmProviderYappie = "yappie"
+const LlmProviderGemini = "gemini"
 
 // To keep track of breaking changes in the config file
 const currentVersion = 1
@@ -22,6 +24,7 @@ type BotmanConfig struct {
 	SystemPrompt string                     `yaml:"systemPrompt"`
 	LlmProvider  string                     `yaml:"llmProvider"`
 	OpenAi       openai.Config              `yaml:"openAi"`
+	Gemini       gemini.Config              `yaml:"gemini"`
 	FireworksAi  fireworks.Config           `yaml:"fireworksAi"`
 	Claude       claude.Config              `yaml:"claude"`
 	Tools        []chattools.ToolDefinition `yaml:"tools"`

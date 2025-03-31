@@ -23,3 +23,12 @@ var ClaudeModels = []string{
 	"claude-3-sonnet-20240229",
 	"claude-3-haiku-20240307",
 }
+
+var GeminiModels = []string{
+	"gemini-2.5-pro-exp-03-25",
+	"gemini-2.0-flash",
+	"gemini-2.0-flash-lite",
+	"gemini-1.5-flash",
+	"gemini-1.5-flash-8b",
+	"gemini-1.5-pro",
+}

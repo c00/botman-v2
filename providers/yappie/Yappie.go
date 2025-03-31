@@ -10,6 +10,8 @@ import (
 	"github.com/c00/botman-v2/internal/logger"
 )
 
+var _ chatbot.Chatter = (*Yappie)(nil)
+
 const defaultResponse = "Belloo! poopayee bappleees tank yuuu! Chasy potatoooo tulaliloo belloo! Belloo! baboiii hana dul sae jiji daa po kass. Hahaha hahaha uuuhhh chasy jeje. Butt baboiii poulet tikka masala pepete jeje hana dul sae. Bee do bee do bee do daa wiiiii tank yuuu! Potatoooo gelatooo po kass poopayee. Daa jiji tank yuuu! Uuuhhh bappleees ti aamoo! Gelatooo gelatooo. Tatata bala tu hahaha me want bananaaa! Bananaaaa wiiiii me want bananaaa! Wiiiii tatata bala tu."
 
 var log = logger.New("Yappie")

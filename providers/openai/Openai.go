@@ -14,6 +14,8 @@ import (
 	openai "github.com/sashabaranov/go-openai"
 )
 
+var _ chatbot.Chatter = (*OpenAi)(nil)
+
 var log = logger.New("Openai")
 
 func New(cfg Config) (*OpenAi, error) {

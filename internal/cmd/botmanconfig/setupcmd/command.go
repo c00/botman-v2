@@ -30,6 +30,11 @@ var Command = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		//Get current config
 		conf := config.LoadFromUser()
-		runSetup(conf)
+		forceApi, _ := cmd.Flags().GetBool("api-key")
+		runSetup(conf, forceApi)
 	},
+}
+
+func init() {
+	Command.Flags().BoolP("api-key", "a", false, "Ask for API Key")
 }
